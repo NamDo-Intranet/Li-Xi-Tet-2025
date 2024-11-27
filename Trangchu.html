@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì Xì Tết 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Bìa trái -->
+        <div class="sidebar left">
+            <img src="image/1.jpg" alt="Bìa trái">
+        </div>
+
+        <!-- Khu vực bốc thăm -->
+        <div class="center-container">
+
+            <h1>Lì Xì Tết 2025</h1>
+            <div id="clock"></div>
+            <p>Em yêu, hãy rút bao lì xì từ anh nhé! <br>Chúc em một năm mới thật vui vẻ và hạnh phúc!</br></p>
+            
+            <!-- Khu vực bao lì xì -->
+            <div id="envelope-container">
+                <!-- Bao lì xì sẽ được tạo tự động bằng JavaScript -->
+            </div>
+        
+            <!-- Kết quả rút -->
+            <div id="result-overlay">
+                <div id="result"></div>
+            </div>
+        
+            <!-- Lịch sử rút -->
+            <h2>Lịch sử rút</h2>
+            <ul id="history"></ul>
+
+            <!-- Nút đăng xuất -->
+            <button id="logout-button" class="btn-logout">Đăng xuất</button>
+        </div>
+
+        <!-- Bìa phải -->
+        <div class="sidebar right">
+            <img src="image/2.jpg" alt="Bìa phải">
+        </div>
+    </div>
+
+    <!-- Modal xác nhận -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <p>Em có chắc chắn là sẽ chọn bao lì xì này không? 	(◕‿◕)</p>
+            <button id="confirm-yes">Yes</button>
+            <button id="confirm-no">No</button>
+        </div>
+    </div>
+    
+<!-- Thêm thẻ audio để phát nhạc -->
+<audio id="backgroundMusic" style="display: none;"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

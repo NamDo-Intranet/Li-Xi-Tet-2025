@@ -222,7 +222,7 @@ updateClock();
 
 document.getElementById('logout-button').addEventListener('click', function() {
     // Khi bấm vào nút đăng xuất, chuyển hướng về trang đăng nhập
-    window.location.href = 'dangnhap.html'; // Điều hướng đến trang đăng nhập
+    window.location.href = 'index.html'; // Điều hướng đến trang đăng nhập
 });
 
 // Danh sách các bài hát
