@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5a1304;
+    text-align: center;
+    color: #D9381E;
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Đảm bảo ảnh nền co giãn theo kích thước màn hình */
+    background-position: center; /* Căn giữa ảnh nền */
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Sử dụng chiều cao 100% của màn hình */
+}
+
+.sidebar {
+    width: 25%; /* Chiếm 1/4 chiều rộng màn hình */
+    height: 100%;
+    overflow: hidden;
+}
+
+.sidebar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
+.center-container {
+    width: 37%; /* Đảm bảo khung giữa không quá rộng */
+    max-width: 700px; /* Giới hạn chiều rộng tối đa */
+    min-height: 70vh; /* Đảm bảo chiều cao không bị quá nhỏ */
+    text-align: center;
+    background-color: #FFD700; /* Màu vàng nền */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: auto; /* Đảm bảo căn giữa theo chiều dọc */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Đảm bảo nội dung nằm giữa */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #730404;
+    margin: 10px 0; /* Giảm khoảng cách trên và dưới để tránh bị tràn */
+    font-family:sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                 -1px -1px 1px rgba(255, 255, 255, 0.5); /* Hiệu ứng 3D */
+}
+
+p {
+    color: #5a0505;
+    margin-top: 1px;
+    border-radius: 10px;
+    opacity: 1.5;
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bao lì xì */
+#envelope-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    margin-top: 4px;
+}
+
+.envelope {
+    width: 67px;
+    height: 127px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-image: url(image/lixi.png);
+    background-size: cover;  /* Đảm bảo hình ảnh không bị méo và phủ hết phần tử */
+    background-position: center; /* Căn giữa hình ảnh */
+}
+
+
+.envelope.gray {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+.envelope::before {
+    font-size: 1.2em;
+    color: #FFD700;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Kết quả */
+#result-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+}
+
+#result {
+    background-image: url('image/anhlixi.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    color: #C1272D;
+    width: 20%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1.2;
+    font-weight: bold; /* Chữ đậm */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                 -1px -1px 1px rgba(255, 255, 255, 0.5); /* Hiệu ứng 3D */
+}
+
+
+/* Lịch sử rút */
+#history {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#history li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#history li span {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Modal xác nhận */
+.modal {
+    display: none; /* Mặc định ẩn đi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-image: url(image/tet.jpg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #f1c40f;
+}
+
+#clock {
+    font-size: 1.2em;  /* Smaller font size */
+    color: #fff;
+    margin-bottom: 15px;  /* Add space between the clock and the message */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional shadow for better visibility */
+}
+
+/* CSS để hiển thị màu đỏ cho chữ Mùng X Tết */
+.tet-day {
+    color: red;
+    font-weight: bold;
+}
+
+.btn-logout {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-logout:hover {
+    background-color: #e64545;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Đảm bảo giao diện responsive */
+@media (max-width: 768px) {
+    .center-container {
+        width: 90%; /* Chiếm gần hết màn hình trên thiết bị nhỏ */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .sidebar {
+        width: 20%; /* Giảm kích thước bìa trên màn hình nhỏ */
+    }
+
+    .envelope {
+        width: 50px;
+        height: 100px;
+    }
+}
+
