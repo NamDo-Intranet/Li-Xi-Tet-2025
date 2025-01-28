@@ -4,9 +4,9 @@ const envelopes = [
     { value: 2000 }, { value: 2000 },
     { value: 5000 }, { value: 5000 }, { value: 5000 }, { value: 5000 }, { value: 5000 },
     { value: 10000 }, { value: 10000 }, { value: 10000 }, { value: 10000 },
-    { value: 20000 }, { value: 20000 }, { value: 20000 }, { value: 20000 },
-    { value: 50000 }, { value: 100000 },
-    { value: "Thư tình yêu" }
+    { value: 20000 }, { value: 20000 }, { value: 20000 }, { value: 50000 },
+    { value: 500000 }, { value: 100000 },
+    { value: "Thư tình yêu gửi riêng + Chúc Mừng Năm Mới Bé Yêu của Anh." }
 ];
 
 // Biến toàn cục để lưu số bao lì xì đã rút
@@ -71,8 +71,8 @@ function openEnvelope(index, value) {
     const resultOverlay = document.getElementById('result-overlay');
 
     // Giới hạn số lần rút là 11 bao
-    if (drawnEnvelopes.length >= 11) {
-        resultElement.innerText = "Em đã rút hết 11 bao lì xì!";
+    if (drawnEnvelopes.length >= 18) {
+        resultElement.innerText = "Em đã rút hết 18 bao lì xì!";
         resultOverlay.style.display = 'flex';
         return;
     }
@@ -228,7 +228,9 @@ document.getElementById('logout-button').addEventListener('click', function() {
 // Danh sách các bài hát
 const playlist = [
     'music/TetTetTetTetDenRoi.mp3',
+    'music/Motnammoibinhan.mp3',
     'music/TetDongDay.mp3',
+    'music/Tambietnamcuqua.mp3',
     'music/NamQuaDaLamGi.mp3',
 ];
 

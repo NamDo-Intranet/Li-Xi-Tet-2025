@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%; /* Sử dụng chiều cao 100% của màn hình */
+    height: 130%; /* Sử dụng chiều cao 100% của màn hình */
 }
 
 .sidebar {
@@ -80,7 +80,7 @@ p {
     position: relative;
     cursor: pointer;
     transition: transform 0.2s;
-    background-image: url(image/lixi.png);
+    background-image: url(image/test.jpg);
     background-size: cover;  /* Đảm bảo hình ảnh không bị méo và phủ hết phần tử */
     background-position: center; /* Căn giữa hình ảnh */
 }
@@ -121,10 +121,10 @@ p {
 }
 
 #result {
-    background-image: url('image/anhlixi.jpg');
+    background-image: url('image/pt.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     font-size: 2em;
     color: #C1272D;
@@ -232,16 +232,16 @@ button:hover {
 /* Đảm bảo giao diện responsive */
 @media (max-width: 768px) {
     .center-container {
-        width: 90%; /* Chiếm gần hết màn hình trên thiết bị nhỏ */
+        width: 50%; /* Chiếm gần hết màn hình trên thiết bị nhỏ */
         padding: 10px;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 0.8em;
     }
 
     .sidebar {
-        width: 20%; /* Giảm kích thước bìa trên màn hình nhỏ */
+        width: 35%; /* Giảm kích thước bìa trên màn hình nhỏ */
     }
 
     .envelope {
